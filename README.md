@@ -8,4 +8,4 @@ Run Handrec.py for Hand gesture recognition.
 
 For now I have only mapped " " (space key) on the keyboard, more keys can be mapped using PyAutoGUI.For mac users if PyAutoGUI doesn't work they can use appscript instead.
 
-To know more the project and its application follow @saksham36/AutismRehab 
+To know more the project and its application follow @saksham36/AutismRehab and @adityaa30
