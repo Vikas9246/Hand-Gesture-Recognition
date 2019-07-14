@@ -1,5 +1,4 @@
-# Hand-Gesture-Recognition
-###### Hand gesture recognition using Python and OpenCV
+# Hand gesture recognition using Python and OpenCV
 
 Run Handrec.py for Hand gesture recognition.
 
@@ -7,6 +6,6 @@ Run Handrec.py for Hand gesture recognition.
 - Press 'r' to reset the background
 - Press 's' to start the key mapping
 
-For now I have only mapped " " (space key) on the keyboard, more keys can be mapped using PyAutoGUI.For mac users if PyAutoGUI doesnt they can use appscript instead.
+For now I have only mapped " " (space key) on the keyboard, more keys can be mapped using PyAutoGUI.For mac users if PyAutoGUI doesn't work they can use appscript instead.
 
 To know more the project and its application follow @saksham36/AutismRehab 
