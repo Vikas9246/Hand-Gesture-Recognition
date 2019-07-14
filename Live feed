@@ -5,6 +5,9 @@ import time
 def main():
     window_name = "Live Video Feed"
     cv2.namedWindow(window_name)
+    # for DirectShow (via videoInput) uncomment the below two lines using video source index depending on the camera you are using
+    # videoSourceIndex = 1
+    # cap = cv2.VideoCapture(cv2.CAP_DSHOW + videoSourceIndex)
     
     try:
         cap = cv2.VideoCapture(0)
