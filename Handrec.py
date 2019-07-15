@@ -108,9 +108,20 @@ while camera.isOpened():
 
             isFinishCal, cnt = calculateFingers(res, drawing)
             if triggerSwitch is True:
-                if isFinishCal is True and cnt <= 2:
-                    print(cnt)
-                    pyautogui.press('space')           #simulate pressing blank space
+                isFinishCal, cnt = calculateFingers(res, drawing)
+                if triggerSwitch is True:
+                        # pyautogui.press('key') simulate pressing 'key' when the no. of fingers(cnt) is shown
+                    if isFinishCal is True and cnt != 0:
+                        print(cnt)
+                    if isFinishCal is True and cnt == 1:
+                        pyautogui.press('w')
+                    elif isFinishCal is True and cnt == 2:
+                        pyautogui.press('s')
+                    elif isFinishCal is True and cnt == 3:
+                        pyautogui.press('a')
+                    elif isFinishCal is True and cnt == 4 or 5:
+                        pyautogui.press('d')
+                        
 
         cv2.imshow('output', drawing)
 
