@@ -1,3 +1,8 @@
+# Author: Vikas Yadav
+# Date : 26th June 2019
+# Lab : Neurocomp lab
+# Project : Mixed Reality Webcam Integrated Robo toy
+
 import cv2
 import numpy as np
 import copy
