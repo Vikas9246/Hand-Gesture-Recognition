@@ -72,6 +72,7 @@ cv2.createTrackbar('trh1', 'trackbar', threshold, 100, printThreshold)
 
 
 while camera.isOpened():
+    time.sleep(0.25)
     ret, frame = camera.read()
     threshold = cv2.getTrackbarPos('trh1', 'trackbar')
     frame = cv2.bilateralFilter(frame, 5, 50, 100)  # smoothing filter
@@ -83,14 +84,15 @@ while camera.isOpened():
     if isBgCaptured == 1:  # this part wont run until background captured
         img = removeBG(frame)
         img = img[0:int(cap_region_y_end * frame.shape[0]), int(cap_region_x_begin * frame.shape[1]):frame.shape[1]]  # clip the ROI
-        cv2.imshow('mask', img)
+        # cv2.imshow('mask', img)
 
         # convert the image into binary image
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         blur = cv2.GaussianBlur(gray, (blurValue, blurValue), 0)
-        cv2.imshow('blur', blur)
+        # cv2.imshow('blur', blur)
+
         ret, thresh = cv2.threshold(blur, threshold, 255, cv2.THRESH_BINARY)
-        cv2.imshow('ori', thresh)
+        # cv2.imshow('ori', thresh)
 
         # get the contours
         thresh1 = copy.deepcopy(thresh)
@@ -112,23 +114,30 @@ while camera.isOpened():
             cv2.drawContours(drawing, [hull], 0, (0, 0, 255), 3)
 
             isFinishCal, cnt = calculateFingers(res, drawing)
+            current_message = ''
             if triggerSwitch is True:
                 isFinishCal, cnt = calculateFingers(res, drawing)
                 if triggerSwitch is True:
                         # pyautogui.press('key') simulate pressing 'key' when the no. of fingers(cnt) is shown
                     if isFinishCal is True and cnt != 0:
-                        print(cnt)
+                        print(f'Fingers count: {cnt}')
+                        current_message = f'Fingers: {cnt}'
                     if isFinishCal is True and cnt == 1:
                         pyautogui.press('w')
+                        current_message = f'Fingers: {cnt} Key: w'
                     elif isFinishCal is True and cnt == 2:
                         pyautogui.press('s')
+                        current_message = f'Fingers: {cnt} Key: s'
                     elif isFinishCal is True and cnt == 3:
                         pyautogui.press('a')
+                        current_message = f'Fingers: {cnt} Key: a'
                     elif isFinishCal is True and cnt == 4 or 5:
                         pyautogui.press('d')
-                        
-
+                        current_message = f'Fingers: {cnt} Key: d'
+        
+        print(current_message)
         cv2.imshow('output', drawing)
+        
 
     # Keyboard OP
     k = cv2.waitKey(10)
