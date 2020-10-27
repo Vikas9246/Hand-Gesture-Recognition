@@ -14,7 +14,7 @@ comtypes==1.1.7
 configobj==5.0.6
 configparser==3.7.4
 croniter==0.3.14
-cryptography==2.7
+cryptography==3.2
 cvlib==0.2.1
 cycler==0.9.0
 Cython==0.29.10
