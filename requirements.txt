@@ -101,7 +101,7 @@ python-logstash==0.4.6
 PyTweening==1.0.3
 pytz==2019.1
 PyWavelets==1.0.3
-pywin32==224
+pywin32==301
 pyWinhook==1.6.1
 PyYAML==5.1.1
 pyzmq==18.0.1
