@@ -41,7 +41,7 @@ idna==2.8
 imageio==2.5.0
 imageio-ffmpeg==0.3.0
 imutils==0.5.2
-ipython==2.4.1
+ipython==7.16.3
 jdcal==1.4.1
 joblib==0.13.2
 json-tricks==3.13.1
