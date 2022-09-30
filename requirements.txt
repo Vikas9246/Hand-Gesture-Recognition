@@ -43,7 +43,7 @@ imageio-ffmpeg==0.3.0
 imutils==0.5.2
 ipython==2.4.1
 jdcal==1.4.1
-joblib==0.13.2
+joblib==1.2.0
 json-tricks==3.13.1
 jsonklog==0.15.0
 Keras==2.2.4
