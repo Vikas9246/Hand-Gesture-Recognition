@@ -7,7 +7,7 @@ astor==0.7.1
 astunparse==1.6.2
 backports.weakref==1.0.post1
 beautifulsoup4==4.4.1
-certifi==2019.3.9
+certifi==2022.12.7
 cffi==1.12.3
 chardet==3.0.4
 comtypes==1.1.7
